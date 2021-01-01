@@ -19,3 +19,4 @@ test artifact:
   stage: test
   script:
     - grep "gatsby" ./public/index.html
+    - grep "nnnnnnnnnn" ./public/index.html
