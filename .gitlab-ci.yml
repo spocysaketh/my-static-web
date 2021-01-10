@@ -1,6 +1,9 @@
+image: node
+
 stages:
   - build
   - test
+  - deploy
 
 
 build website:
@@ -23,7 +26,6 @@ test artifact:
 
 
 test website:
-  image: node
   stage: test
   script:
     - npm install
@@ -32,7 +34,10 @@ test website:
     - sleep 10
     - curl "http://localhost:9000" | tac | tac | grep -q "Gatsby"
 
-
+deploy to surge:
+  script:
+    - npm install --global surge
+    - surge --project ./public --domain ssssssapsap.surge.sh
 
 
 
