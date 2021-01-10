@@ -43,6 +43,7 @@ deploy to surge:
 
 test deployment:
   stage: deployment tests
-  curl "http://ssssssapsap.surge.sh/" | tac | tac | grep -q "Now go build something great."
+  script:
+    curl "http://ssssssapsap.surge.sh/" | tac | tac | grep -q "Now go build something great."
 
 
