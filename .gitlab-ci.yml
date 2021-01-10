@@ -42,8 +42,10 @@ deploy to surge:
 
 
 test deployment:
+  image: alpine
   stage: deployment tests
   script:
+    RUN apk --no-cache add curl
     curl "http://ssssssapsap.surge.sh/" | tac | tac | grep -q "Now go build something great."
 
 
