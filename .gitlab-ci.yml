@@ -45,7 +45,7 @@ test deployment:
   image: alpine
   stage: deployment tests
   script:
-    apk add openssh
-    curl "http://ssssssapsap.surge.sh/" | tac | tac | grep -q "Now go build something great."
+    - apk add --no-cache curl
+    - curl "http://ssssssapsap.surge.sh/" | tac | tac | grep -q "Now go build something great."
 
 
