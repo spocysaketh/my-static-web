@@ -10,6 +10,7 @@ stages:
 build website:
   stage: build
   script:
+    - echo $CI_COMMIT_SHORT_SHA
     - npm install
     - npm install -g gatsby-cli
     - gatsby build
