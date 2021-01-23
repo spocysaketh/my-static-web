@@ -25,6 +25,7 @@ build website:
 
 
 test artifact:
+  cache: {}
   image: alpine
   stage: test
   script:
@@ -41,7 +42,6 @@ test website:
     - curl "http://localhost:9000" | tac | tac | grep -q "Gatsby"
 
 deploy to surge:
-  cache: {}
   stage: deploy
   script:
     - npm install --global surge
