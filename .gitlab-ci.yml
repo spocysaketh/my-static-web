@@ -82,6 +82,8 @@ deploy staging:
   script:
     - npm install --global surge
     - surge --project ./public --domain $STAGING_DOMAIN
+  only:
+    - master
   except:
     - schedules
 
@@ -99,6 +101,8 @@ deploy production:
   script:
     - npm install --global surge
     - surge --project ./public --domain $PRODUCTION_DOMAIN
+  only:
+    - master
   except:
     - schedules
 
@@ -112,6 +116,8 @@ production tests:
     - apk add --no-cache curl
     - curl "http://ssssssapsap.surge.sh/" | tac | tac | grep -q "Now go build something great."
     - curl "http://ssssssapsap.surge.sh/" | tac | tac | grep -q "$CI_COMMIT_SHORT_SHA"
+  only:
+    - master
   except:
     - schedules
 
