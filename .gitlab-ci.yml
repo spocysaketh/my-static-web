@@ -47,6 +47,7 @@ test artifact:
   
   image: alpine
   stage: test
+  cache: {}
   script:
     - grep -q "gatsby" ./public/index.html
   except:
@@ -68,6 +69,7 @@ test website:
 
 deploy to surge:
   stage: deploy
+  cache: {}
   script:
     - npm install --global surge
     - surge --project ./public --domain ssssssapsap.surge.sh
